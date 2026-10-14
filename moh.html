@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة تربية | وعي يصنع أجيالًا</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+         :root {
+            --green: #456b5b;
+            --dark: #294638;
+            --cream: #faf6ef;
+            --pink: #e8c8c2;
+            --text: #373b36;
+        }
+        
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.9;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        header {
+            background: white;
+            padding: 14px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 12px #00000008;
+        }
+        
+        .logo {
+            color: var(--green);
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        nav a:hover {
+            color: #b57970;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            padding: 11px 23px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            font-family: inherit;
+            transition: .2s;
+        }
+        
+        .btn:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            padding: 75px 7%;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 40px;
+            align-items: center;
+            background: linear-gradient(120deg, #f5e5df, #faf6ef);
+        }
+        
+        .hero h1 {
+            font-size: clamp(30px, 4vw, 48px);
+            color: var(--dark);
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #62665f;
+        }
+        
+        .hero-image {
+            min-height: 320px;
+            border-radius: 25px;
+            background: #e6d4c5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            object-fit: cover;
+        }
+        
+        section {
+            padding: 65px 7%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        
+        .section-title h2 {
+            font-size: 30px;
+            color: var(--dark);
+        }
+        
+        .section-title p {
+            color: #777;
+            margin-top: 8px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .feature {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 5px 20px #00000006;
+        }
+        
+        .feature .icon {
+            font-size: 38px;
+        }
+        
+        .feature h3 {
+            color: var(--green);
+            margin: 10px 0;
+        }
+        
+        .courses {
+            background: #f0eee5;
+        }
+        
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+        
+        .course {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px #00000008;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .course-top {
+            padding: 28px 20px;
+            background: #dfe9df;
+            text-align: center;
+            font-size: 46px;
+        }
+        
+        .course:nth-child(2) .course-top {
+            background: #f3e1dc;
+        }
+        
+        .course:nth-child(3) .course-top {
+            background: #e7e0f0;
+        }
+        
+        .course-content {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+        }
+        
+        .course-content h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .course-content p {
+            color: #696969;
+            margin-bottom: 15px;
+        }
+        
+        .course-content .btn {
+            margin-top: auto;
+        }
+        
+        .tag {
+            background: #eef3ed;
+            color: var(--green);
+            padding: 4px 10px;
+            border-radius: 7px;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        
+        .about {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+        }
+        
+        .about h2 {
+            color: var(--dark);
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+        
+        .register {
+            background: #e7eee6;
+        }
+        
+        .form-box {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+        }
+        
+        .form-box label {
+            display: block;
+            margin: 12px 0 5px;
+            font-weight: bold;
+        }
+        
+        .form-box input,
+        .form-box select,
+        .form-box textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 9px;
+            font-family: inherit;
+            font-size: 15px;
+            background: #fff;
+        }
+        
+        .form-box textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+        
+        .form-box .btn {
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #218c54;
+            color: white;
+            border-radius: 30px;
+            padding: 12px 18px;
+            z-index: 10;
+            box-shadow: 0 5px 15px #0002;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 28px 15px;
+        }
+        
+        @media (max-width: 850px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 45px;
+            }
+            .features,
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 560px) {
+            header {
+                justify-content: center;
+            }
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+            .features,
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+            section {
+                padding: 45px 5%;
+            }
+            .hero {
+                padding: 40px 5%;
+            }
+            .form-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="#home">🌿 رحلة تربية</a>
+
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#courses">الكورسات</a>
+            <a href="#about">عن الموقع</a>
+            <a href="#register">التسجيل</a>
+        </nav>
+
+        <a class="btn" href="#register">ابدئي رحلتك</a>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div>
+                <h1>تربية بوعي... لبناء شخصية قوية ومتوازنة</h1>
+                <p>
+                    رحلة تعليمية لكل أم تريد فهم طفلها، وتطوير مهاراتها التربوية، ومساعدة أبنائها على النمو بثقة واستقلالية، من الطفولة حتى مرحلة المراهقة.
+                </p>
+                <a class="btn" href="#courses">اكتشفي الكورسات</a>
+                <a class="btn" href="#register" style="background:transparent;color:#456b5b;border:1px solid #456b5b;margin-right:8px">
+        سجلي الآن
+      </a>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1000&q=85" alt="أم وطفل في أجواء أسرية دافئة">
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">
+                <h2>ماذا ستتعلمين معنا؟</h2>
+                <p>خطوات عملية تساعدك على بناء علاقة صحية مع أبنائك.</p>
+            </div>
+
+            <div class="features">
+                <article class="feature">
+                    <div class="icon">💗</div>
+                    <h3>فهم مشاعر الطفل</h3>
+                    <p>التعرف على احتياجات الطفل العاطفية والتعامل مع الغضب والخوف.</p>
+                </article>
+
+                <article class="feature">
+                    <div class="icon">🌱</div>
+                    <h3>بناء الشخصية</h3>
+                    <p>تعزيز الثقة بالنفس والاستقلالية وتحمل المسؤولية تدريجيًا.</p>
+                </article>
+
+                <article class="feature">
+                    <div class="icon">🤝</div>
+                    <h3>التعامل مع المراهق</h3>
+                    <p>الحوار الفعال ووضع الحدود وبناء علاقة قائمة على الاحترام.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="courses" id="courses">
+            <div class="section-title">
+                <h2>الكورسات المتاحة</h2>
+                <p>اختاري المسار المناسب لاحتياجات أسرتك.</p>
+            </div>
+
+            <div class="course-grid">
+                <article class="course">
+                    <div class="course-top">👶</div>
+                    <div class="course-content">
+                        <span class="tag">مرحلة الطفولة</span>
+                        <h3>أساسيات التربية الواعية</h3>
+                        <p>
+                            تعلمي فهم سلوك طفلك، والتعامل مع نوبات الغضب، وبناء قواعد أسرية واضحة بعيدًا عن الصراخ.
+                        </p>
+                        <p><strong>المدة:</strong> 4 أسابيع</p>
+                        <p><strong>السعر:</strong> يحدد لاحقًا</p>
+                        <button class="btn" onclick="chooseCourse('أساسيات التربية الواعية')">
+            تفاصيل وتسجيل
+          </button>
+                    </div>
+                </article>
+
+                <article class="course">
+                    <div class="course-top">🌼</div>
+                    <div class="course-content">
+                        <span class="tag">بناء الشخصية</span>
+                        <h3>طفل واثق ومستقل</h3>
+                        <p>
+                            استراتيجيات عملية لدعم تقدير الذات، وتشجيع اتخاذ القرار، وتنمية المسؤولية.
+                        </p>
+                        <p><strong>المدة:</strong> 3 أسابيع</p>
+                        <p><strong>السعر:</strong> يحدد لاحقًا</p>
+                        <button class="btn" onclick="chooseCourse('طفل واثق ومستقل')">
+            تفاصيل وتسجيل
+          </button>
+                    </div>
+                </article>
+
+                <article class="course">
+                    <div class="course-top">🦋</div>
+                    <div class="course-content">
+                        <span class="tag">مرحلة المراهقة</span>
+                        <h3>فن التعامل مع المراهق</h3>
+                        <p>
+                            افهمي التغيرات في مرحلة المراهقة، وطوري مهارات الحوار ووضع الحدود الصحية.
+                        </p>
+                        <p><strong>المدة:</strong> 4 أسابيع</p>
+                        <p><strong>السعر:</strong> يحدد لاحقًا</p>
+                        <button class="btn" onclick="chooseCourse('فن التعامل مع المراهق')">
+            تفاصيل وتسجيل
+          </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="about">
+                <h2>عن رحلة تربية</h2>
+                <p>
+                    نؤمن أن التربية رحلة تعلم مستمرة، وأن كل أم تستحق الحصول على المعرفة والأدوات التي تساعدها على فهم أبنائها. نقدم محتوى تعليميًا مبسطًا وتطبيقات عملية تناسب الحياة اليومية، مع احترام اختلاف الأطفال واحتياجات كل أسرة.
+                </p>
+            </div>
+        </section>
+
+        <section class="register" id="register">
+            <div class="section-title">
+                <h2>سجلي في الكورس المناسب لكِ</h2>
+                <p>املئي البيانات التالية لإرسال طلب التسجيل عبر واتساب.</p>
+            </div>
+
+            <form class="form-box" id="registrationForm">
+                <label for="name">الاسم بالكامل</label>
+                <input id="name" name="name" type="text" placeholder="اكتبي اسمك" required>
+
+                <label for="phone">رقم الهاتف</label>
+                <input id="phone" name="phone" type="tel" placeholder="رقم الهاتف للتواصل" required>
+
+                <label for="course">اختاري الكورس</label>
+                <select id="course" name="course" required>
+        <option value="">-- اختاري الكورس --</option>
+        <option>أساسيات التربية الواعية</option>
+        <option>طفل واثق ومستقل</option>
+        <option>فن التعامل مع المراهق</option>
+      </select>
+
+                <label for="message">استفسارك (اختياري)</label>
+                <textarea id="message" name="message" placeholder="اكتبي أي سؤال أو استفسار"></textarea>
+
+                <button class="btn" type="submit">إرسال طلب التسجيل</button>
+            </form>
+        </section>
+    </main>
+
+    <a class="whatsapp" id="whatsappLink" href="https://wa.me/201000000000" target="_blank" rel="noopener noreferrer">
+  ☎ تواصلي عبر واتساب
+</a>
+
+    <footer>
+        <p>🌿 رحلة تربية — وعي يصنع أجيالًا</p>
+        <p>© <span id="year"></span> جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        // غيّري الرقم إلى رقم واتساب الخاص بالموقع.
+        // اكتبيه بكود الدولة، دون + أو مسافات.
+        const WHATSAPP_NUMBER = "201000000000";
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        document.getElementById("whatsappLink").href =
+            "https://wa.me/" + WHATSAPP_NUMBER;
+
+        function chooseCourse(courseName) {
+            document.getElementById("course").value = courseName;
+            document.getElementById("register").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        document.getElementById("registrationForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value.trim();
+                const phone = document.getElementById("phone").value.trim();
+                const course = document.getElementById("course").value;
+                const message = document.getElementById("message").value.trim();
+
+                if (!name || !phone || !course) {
+                    alert("من فضلك املئي الاسم والهاتف واختاري الكورس.");
+                    return;
+                }
+
+                const text =
+                    "السلام عليكم، أرغب في التسجيل في أحد كورسات رحلة تربية.\n" +
+                    "الاسم: " + name + "\n" +
+                    "رقم الهاتف: " + phone + "\n" +
+                    "الكورس: " + course + "\n" +
+                    "الاستفسار: " + (message || "لا يوجد");
+
+                const url = "https://wa.me/" + WHATSAPP_NUMBER +
+                    "?text=" + encodeURIComponent(text);
+
+                window.open(url, "_blank", "noopener,noreferrer");
+            });
+    </script>
+
+</body>
+
+</html>
